@@ -3,7 +3,11 @@ export const PT = 0.352777778;
 export const MAP_TOKENS = {
   fontFamily: "Apple SD Gothic Neo, Noto Sans CJK KR, Helvetica, Arial, sans-serif",
   backgroundDotDiameter: 0.24 * PT,
-  pitch: { micro: 2.9 * PT, mid: 4.8 * PT, large: 7.2 * PT },
+  pitch: {
+    micro: 2.9 * PT,
+    mid: 4.8 * PT,
+    large: 7.2 * PT
+  },
   dotDiameters: {
     large: [2.4 * PT, 3.8 * PT, 5.4 * PT, 7.2 * PT],
     micro: [0.60 * PT, 0.90 * PT, 1.20 * PT, 1.55 * PT],
@@ -14,22 +18,99 @@ export const MAP_TOKENS = {
     micro: [0.22, 0.32, 0.46, 0.58],
     mid: [0.28, 0.38, 0.52, 0.66]
   },
-  stroke: { context: 0.066, former: 0.070, current: 0.088, scale: 0.18 },
-  text: { title: 8.2, small: 1.85, legend: 1.9, side: 2.1, source: 1.12 }
+  stroke: {
+    contextFine: 0.046,
+    context: 0.066,
+    former: 0.070,
+    current: 0.088,
+    scale: 0.18
+  },
+  text: {
+    title: 8.2,
+    small: 1.85,
+    legend: 1.9,
+    side: 2.1,
+    source: 1.12
+  }
 };
 
 export const THEMES = {
-  white: { background: "#FFFFFF", foreground: "#000000", context: "#000000", text: "#000000", line: "#000000" },
-  black: { background: "#000000", foreground: "#FFFFFF", context: "#FFFFFF", text: "#FFFFFF", line: "#FFFFFF" }
+  white: {
+    background: "#FFFFFF",
+    foreground: "#000000",
+    context: "#000000",
+    text: "#000000",
+    line: "#000000"
+  },
+  black: {
+    background: "#000000",
+    foreground: "#FFFFFF",
+    context: "#FFFFFF",
+    text: "#FFFFFF",
+    line: "#FFFFFF"
+  }
 };
 
 export const LAYOUT_PRESETS = {
-  portrait: { id: "portrait", name: "Portrait", width: 210, height: 250, field: [12, 6, 186, 238], dotSet: "mid", pitch: MAP_TOKENS.pitch.mid, pitchLabel: "mid 4.8pt", dotLabel: "1.2 / 1.8 / 2.5 / 3.3pt", densityLabel: "0.28 / 0.38 / 0.52 / 0.66", legend: [116, 235.5] },
-  editorial: { id: "editorial", name: "Editorial", width: 480, height: 180, field: [248, 6, 218, 166], dotSet: "micro", pitch: MAP_TOKENS.pitch.micro, pitchLabel: "left large 7.2pt / right micro 2.9pt", dotLabel: "large legend 2.4 / 3.8 / 5.4 / 7.2pt; micro map 0.60 / 0.90 / 1.20 / 1.55pt", densityLabel: "left 0.34 / 0.43 / 0.57 / 0.72; right 0.22 / 0.32 / 0.46 / 0.58", legend: [202, 12] },
-  landscape: { id: "landscape", name: "Landscape", width: 420, height: 280, field: [6, 6, 408, 268], dotSet: "mid", pitch: MAP_TOKENS.pitch.mid, pitchLabel: "mid 4.8pt", dotLabel: "1.2 / 1.8 / 2.5 / 3.3pt", densityLabel: "0.28 / 0.38 / 0.52 / 0.66", legend: [18, 18] }
+  portrait: {
+    id: "portrait",
+    name: "Portrait",
+    width: 210,
+    height: 250,
+    field: [12, 6, 186, 238],
+    dotSet: "mid",
+    pitch: MAP_TOKENS.pitch.mid,
+    pitchLabel: "mid 4.8pt",
+    dotLabel: "1.2 / 1.8 / 2.5 / 3.3pt",
+    densityLabel: "0.28 / 0.38 / 0.52 / 0.66",
+    legend: [116, 235.5],
+    aralFiles: {
+      "1960": "../output/아랄해_1960_210x250_확장.svg",
+      "1989": "../output/아랄해_1989_210x250_확장.svg",
+      "2014": "../output/아랄해_2014_210x250_확장.svg"
+    }
+  },
+  editorial: {
+    id: "editorial",
+    name: "Editorial",
+    width: 480,
+    height: 180,
+    field: [248, 6, 218, 166],
+    dotSet: "micro",
+    pitch: MAP_TOKENS.pitch.micro,
+    pitchLabel: "left large 7.2pt / right micro 2.9pt",
+    dotLabel: "large legend 2.4 / 3.8 / 5.4 / 7.2pt; micro map 0.60 / 0.90 / 1.20 / 1.55pt",
+    densityLabel: "left 0.34 / 0.43 / 0.57 / 0.72; right 0.22 / 0.32 / 0.46 / 0.58",
+    legend: [202, 12],
+    aralFiles: {
+      "1960": "../output/아랄해_1960_담수변화.svg",
+      "1989": "../output/아랄해_1989_담수변화.svg",
+      "2014": "../output/아랄해_2014_담수변화.svg"
+    }
+  },
+  landscape: {
+    id: "landscape",
+    name: "Landscape",
+    width: 420,
+    height: 280,
+    field: [6, 6, 408, 268],
+    dotSet: "mid",
+    pitch: MAP_TOKENS.pitch.mid,
+    pitchLabel: "mid 4.8pt",
+    dotLabel: "1.2 / 1.8 / 2.5 / 3.3pt",
+    densityLabel: "0.28 / 0.38 / 0.52 / 0.66",
+    legend: [18, 18],
+    aralFiles: {
+      "1960": "../output/아랄해_1960_중간밀도_오른쪽_420x280.svg",
+      "1989": "../output/아랄해_1989_중간밀도_오른쪽_420x280.svg",
+      "2014": "../output/아랄해_2014_중간밀도_오른쪽_420x280.svg"
+    }
+  }
 };
 
 export const DATASETS = [];
+
+const outlineCache = new WeakMap();
 
 export function summarizeRecords(records) {
   const fields = [...new Set(records.flatMap((record) => Object.keys(record)))];
@@ -38,7 +119,13 @@ export function summarizeRecords(records) {
   const hasGeometry = records.some((record) => record.geometry);
   const hasXY = records.some((record) => Number.isFinite(Number(record.x)) && Number.isFinite(Number(record.y)));
   const hasLonLat = records.some((record) => Number.isFinite(Number(record.lon ?? record.longitude)) && Number.isFinite(Number(record.lat ?? record.latitude)));
-  const spatial = hasGeometry ? { detected: true, message: "GeoJSON geometry detected" } : hasLonLat ? { detected: true, message: "longitude / latitude detected" } : hasXY ? { detected: true, message: "x / y coordinates detected" } : { detected: false, message: "Spatial coordinates not detected" };
+  const spatial = hasGeometry
+    ? { detected: true, message: "GeoJSON geometry detected" }
+    : hasLonLat
+      ? { detected: true, message: "longitude / latitude detected" }
+      : hasXY
+        ? { detected: true, message: "x / y coordinates detected" }
+        : { detected: false, message: "Spatial coordinates not detected" };
   return { fields, numericFields, missing, spatial, metadata: {} };
 }
 
@@ -63,7 +150,11 @@ export function classifyEqualInterval(values, unit = "") {
   const bins = Array.from({ length: 4 }, (_, index) => {
     const start = min + step * index;
     const end = index === 3 ? max : min + step * (index + 1);
-    return { start, end, label: `${formatRange(start)}-${formatRange(end)}${unit ? ` ${unit}` : ""}` };
+    return {
+      start,
+      end,
+      label: `${formatRange(start)}-${formatRange(end)}${unit ? ` ${unit}` : ""}`
+    };
   });
   return { min, max, bins };
 }
@@ -74,12 +165,14 @@ export function formatRange(value) {
   return String(Math.round(value * 100) / 100);
 }
 
-export function renderGenericSvg({ records, field, unit, preset, theme, labels, view }) {
+export function renderGenericSvg({ records, contextRecords = [], field, unit, preset, theme, labels, view, extent = "region" }) {
   const values = records.map((record) => Number(record[field])).filter(Number.isFinite);
   const classification = classifyEqualInterval(values, unit);
   const [fx, fy, fw, fh] = preset.field;
   const geometryRecords = records.filter((record) => record.geometry);
-  const bounds = spatialBounds(geometryRecords.length ? geometryRecords : records);
+  const worldBounds = { minX: -180, minY: -90, maxX: 180, maxY: 90 };
+  const bounds = extent === "world" ? worldBounds : spatialBounds(geometryRecords.length ? geometryRecords : records);
+  const contextLayers = contextRecords.length ? rasterizeGeometryOutline(contextRecords, preset, bounds) : null;
   const geometryLayers = geometryRecords.length ? rasterizeGeometryRecords(geometryRecords, field, preset, classification, bounds) : null;
   const dots = geometryLayers ? geometryLayers.dots : projectRecords(records, field, preset, classification, bounds);
   const body = [];
@@ -90,23 +183,76 @@ export function renderGenericSvg({ records, field, unit, preset, theme, labels, 
     body.push(svgText(12, 35.5, labels.description, MAP_TOKENS.text.small, theme.text));
   }
   body.push(...backgroundGrid(preset, theme));
-  if (geometryLayers) body.push(...geometryLayers.contextPaths.map((d) => `<path d="${d}" fill="none" stroke="${theme.context}" stroke-width="${MAP_TOKENS.stroke.context.toFixed(3)}" stroke-linecap="square" stroke-linejoin="miter" shape-rendering="crispEdges"/>`));
-  if (view === "data") body.push(`<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" fill="none" stroke="${theme.line}" stroke-width="0.12"/>`);
+  if (labels.outline !== false) {
+    const paths = contextLayers?.contextPaths.length ? contextLayers.contextPaths : geometryLayers?.contextPaths || [];
+    body.push(...paths.map((d) => `<path d="${d}" fill="none" stroke="${theme.context}" stroke-width="${MAP_TOKENS.stroke.context.toFixed(3)}" stroke-linecap="square" stroke-linejoin="miter" shape-rendering="crispEdges"/>`));
+  }
+  if (view === "data") {
+    body.push(`<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" fill="none" stroke="${theme.line}" stroke-width="0.12"/>`);
+  }
   body.push(...dots.map((dot) => `<circle cx="${dot.x.toFixed(3)}" cy="${dot.y.toFixed(3)}" r="${dot.r.toFixed(3)}" fill="${theme.foreground}"/>`));
   body.push(...legend(classification, preset, theme));
-  if (labels.geographic && preset.id !== "editorial") body.push(svgText(fx + 4, fy + 10, labels.title, MAP_TOKENS.text.small, theme.text));
+  if (labels.geographic && preset.id !== "editorial") {
+    body.push(svgText(fx + 4, fy + 10, labels.title, MAP_TOKENS.text.small, theme.text));
+  }
   body.push(svgText(12, preset.height - 4, labels.source || "Unit not detected", MAP_TOKENS.text.source, theme.text));
-  const desc = [`preset: ${preset.name}`, `field: ${field}`, `unit: ${unit || "Unit not detected"}`, `classification: Equal Interval / 4 Classes / min ${classification.min} / max ${classification.max}`, `geometry renderer: ${geometryLayers ? "grid occupancy cell-edge contour" : "point coordinates"}`, `dot diameters: ${preset.dotLabel}`, `grid pitch: ${preset.pitchLabel}`].join("\n");
+  const desc = [
+    `preset: ${preset.name}`,
+    `field: ${field}`,
+    `unit: ${unit || "Unit not detected"}`,
+    `classification: Equal Interval / 4 Classes / min ${classification.min} / max ${classification.max}`,
+    `extent: ${extent}`,
+    `geometry renderer: ${geometryLayers ? "grid occupancy cell-edge contour" : "point coordinates"}`,
+    `dot diameters: ${preset.dotLabel}`,
+    `grid pitch: ${preset.pitchLabel}`
+  ].join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="${preset.width}mm" height="${preset.height}mm" viewBox="0 0 ${preset.width} ${preset.height}"><desc>${escapeXml(desc)}</desc>${body.join("")}</svg>`;
 }
 
+function rasterizeGeometryOutline(records, preset, bounds) {
+  const cacheKey = `${preset.id}:${bounds.minX}:${bounds.minY}:${bounds.maxX}:${bounds.maxY}`;
+  const cached = outlineCache.get(records)?.get(cacheKey);
+  if (cached) return cached;
+  const [fx, fy, width, height] = preset.field;
+  const cols = Math.floor(width / preset.pitch);
+  const rows = Math.floor(height / preset.pitch);
+  const contextPaths = [];
+  for (const record of records) {
+    if (!record.geometry) continue;
+    const active = new Set();
+    const bbox = geometryBounds(record.geometry);
+    for (let col = 0; col < cols; col += 1) {
+      for (let row = 0; row < rows; row += 1) {
+        const cx = fx + (col + 0.5) * preset.pitch;
+        const cy = fy + (row + 0.5) * preset.pitch;
+        const source = unprojectPoint(cx, cy, preset, bounds);
+        if (!pointInBounds(source.x, source.y, bbox)) continue;
+        if (pointInGeometry(source.x, source.y, record.geometry)) active.add(`${col},${row}`);
+      }
+    }
+    const path = contourPath(active, preset);
+    if (path) contextPaths.push(path);
+  }
+  const result = { contextPaths };
+  if (!outlineCache.has(records)) outlineCache.set(records, new Map());
+  outlineCache.get(records).set(cacheKey, result);
+  return result;
+}
+
 function projectRecords(records, field, preset, classification, bounds = spatialBounds(records)) {
+  const [fx, fy, fw, fh] = preset.field;
   const diameters = MAP_TOKENS.dotDiameters[preset.dotSet];
-  return records.map((record, index) => ({ index, ...recordPoint(record), value: Number(record[field]) })).filter((item) => Number.isFinite(item.value)).map((item) => {
+  const spatial = records.map((record, index) => ({
+    record,
+    index,
+    ...recordPoint(record),
+    value: Number(record[field])
+  })).filter((item) => Number.isFinite(item.value));
+  return spatial.map((item) => {
     const xSource = Number.isFinite(item.x) ? item.x : item.index;
-    const ySource = Number.isFinite(item.y) ? item.y : stableNoise("row", item.index) * (records.length || 1);
+    const ySource = Number.isFinite(item.y) ? item.y : stableNoise("row", item.index) * (spatial.length || 1);
     const point = projectPoint(xSource, ySource, preset, bounds);
-    const classIndex = classIndexForValue(item.value, classification);
+    const classIndex = Math.min(3, Math.max(0, Math.floor((item.value - classification.min) / ((classification.max - classification.min || 1) / 4))));
     return { x: point.x, y: point.y, r: diameters[classIndex] * 0.5 };
   });
 }
@@ -116,33 +262,37 @@ function rasterizeGeometryRecords(records, field, preset, classification, bounds
   const cols = Math.floor(width / preset.pitch);
   const rows = Math.floor(height / preset.pitch);
   const diameters = MAP_TOKENS.dotDiameters[preset.dotSet];
-  const contextActive = new Set();
+  const contextPaths = [];
   const dots = [];
+
   for (const [featureIndex, record] of records.entries()) {
     const value = Number(record[field]);
     if (!Number.isFinite(value)) continue;
-    const classIndex = classIndexForValue(value, classification);
+    const classIndex = Math.min(3, Math.max(0, Math.floor((value - classification.min) / ((classification.max - classification.min || 1) / 4))));
     const active = new Set();
     const bbox = geometryBounds(record.geometry);
     for (let col = 0; col < cols; col += 1) {
       for (let row = 0; row < rows; row += 1) {
-        const source = unprojectPoint(fx + (col + 0.5) * preset.pitch, fy + (row + 0.5) * preset.pitch, preset, bounds);
-        if (!pointInBounds(source.x, source.y, bbox) || !pointInGeometry(source.x, source.y, record.geometry)) continue;
-        const key = `${col},${row}`;
-        active.add(key);
-        contextActive.add(key);
+        const cx = fx + (col + 0.5) * preset.pitch;
+        const cy = fy + (row + 0.5) * preset.pitch;
+        const source = unprojectPoint(cx, cy, preset, bounds);
+        if (!pointInBounds(source.x, source.y, bbox)) continue;
+        if (!pointInGeometry(source.x, source.y, record.geometry)) continue;
+        active.add(`${col},${row}`);
       }
     }
-    for (const key of sampleActiveCells(active, preset, classIndex, featureIndex)) {
+    const path = contourPath(active, preset);
+    if (path) contextPaths.push(path);
+    const sampled = sampleActiveCells(active, preset, classIndex, featureIndex);
+    for (const key of sampled) {
       const [col, row] = key.split(",").map(Number);
-      dots.push({ x: fx + (col + 0.5) * preset.pitch, y: fy + (row + 0.5) * preset.pitch, r: diameters[classIndex] * 0.5 });
+      const cx = fx + (col + 0.5) * preset.pitch;
+      const cy = fy + (row + 0.5) * preset.pitch;
+      dots.push({ x: cx, y: cy, r: diameters[classIndex] * 0.5 });
     }
   }
-  return { contextPaths: [contourPath(contextActive, preset)].filter(Boolean), dots };
-}
 
-function classIndexForValue(value, classification) {
-  return Math.min(3, Math.max(0, Math.floor((value - classification.min) / ((classification.max - classification.min || 1) / 4))));
+  return { contextPaths, dots };
 }
 
 function sampleActiveCells(active, preset, classIndex, featureIndex) {
@@ -187,7 +337,9 @@ function recordPoint(record) {
   if (!record.geometry) return { x: NaN, y: NaN };
   const points = geometryPoints(record.geometry);
   if (!points.length) return { x: NaN, y: NaN };
-  return { x: points.reduce((sum, point) => sum + point[0], 0) / points.length, y: points.reduce((sum, point) => sum + point[1], 0) / points.length };
+  const x = points.reduce((sum, point) => sum + point[0], 0) / points.length;
+  const y = points.reduce((sum, point) => sum + point[1], 0) / points.length;
+  return { x, y };
 }
 
 function geometryPoints(geometry) {
@@ -200,11 +352,20 @@ function geometryPoints(geometry) {
 }
 
 function spatialBounds(records) {
-  const points = records.flatMap((record) => record.geometry ? geometryPoints(record.geometry) : (() => { const point = recordPoint(record); return Number.isFinite(point.x) && Number.isFinite(point.y) ? [[point.x, point.y]] : []; })());
+  const points = records.flatMap((record) => {
+    if (record.geometry) return geometryPoints(record.geometry);
+    const point = recordPoint(record);
+    return Number.isFinite(point.x) && Number.isFinite(point.y) ? [[point.x, point.y]] : [];
+  });
   if (!points.length) return { minX: 0, minY: 0, maxX: 1, maxY: 1 };
   const xs = points.map((point) => point[0]).filter(Number.isFinite);
   const ys = points.map((point) => point[1]).filter(Number.isFinite);
-  return { minX: Math.min(...xs), minY: Math.min(...ys), maxX: Math.max(...xs), maxY: Math.max(...ys) };
+  return {
+    minX: Math.min(...xs),
+    minY: Math.min(...ys),
+    maxX: Math.max(...xs),
+    maxY: Math.max(...ys)
+  };
 }
 
 function geometryBounds(geometry) {
@@ -212,7 +373,12 @@ function geometryBounds(geometry) {
   if (!points.length) return { minX: 0, minY: 0, maxX: 0, maxY: 0 };
   const xs = points.map((point) => point[0]);
   const ys = points.map((point) => point[1]);
-  return { minX: Math.min(...xs), minY: Math.min(...ys), maxX: Math.max(...xs), maxY: Math.max(...ys) };
+  return {
+    minX: Math.min(...xs),
+    minY: Math.min(...ys),
+    maxX: Math.max(...xs),
+    maxY: Math.max(...ys)
+  };
 }
 
 function projectPoint(x, y, preset, bounds) {
@@ -223,7 +389,10 @@ function projectPoint(x, y, preset, bounds) {
   const usedH = (bounds.maxY - bounds.minY) * scale;
   const ox = fx + (fw - usedW) / 2;
   const oy = fy + (fh - usedH) / 2;
-  return { x: ox + (x - bounds.minX) * scale, y: oy + usedH - (y - bounds.minY) * scale };
+  return {
+    x: ox + (x - bounds.minX) * scale,
+    y: oy + usedH - (y - bounds.minY) * scale
+  };
 }
 
 function unprojectPoint(x, y, preset, bounds) {
@@ -234,7 +403,10 @@ function unprojectPoint(x, y, preset, bounds) {
   const usedH = (bounds.maxY - bounds.minY) * scale;
   const ox = fx + (fw - usedW) / 2;
   const oy = fy + (fh - usedH) / 2;
-  return { x: bounds.minX + (x - ox) / scale, y: bounds.minY + (oy + usedH - y) / scale };
+  return {
+    x: bounds.minX + (x - ox) / scale,
+    y: bounds.minY + (oy + usedH - y) / scale
+  };
 }
 
 function pointInBounds(x, y, bounds) {
@@ -273,7 +445,11 @@ function backgroundGrid(preset, theme) {
   const rows = Math.floor(height / preset.pitch);
   const radius = MAP_TOKENS.backgroundDotDiameter * 0.5;
   const elems = [];
-  for (let col = 0; col < cols; col += 1) for (let row = 0; row < rows; row += 1) elems.push(`<circle cx="${(x + (col + 0.5) * preset.pitch).toFixed(3)}" cy="${(y + (row + 0.5) * preset.pitch).toFixed(3)}" r="${radius.toFixed(3)}" fill="${theme.foreground}"/>`);
+  for (let col = 0; col < cols; col += 1) {
+    for (let row = 0; row < rows; row += 1) {
+      elems.push(`<circle cx="${(x + (col + 0.5) * preset.pitch).toFixed(3)}" cy="${(y + (row + 0.5) * preset.pitch).toFixed(3)}" r="${radius.toFixed(3)}" fill="${theme.foreground}"/>`);
+    }
+  }
   return elems;
 }
 
@@ -282,7 +458,10 @@ function legend(classification, preset, theme) {
   const diameters = MAP_TOKENS.dotDiameters[preset.id === "editorial" ? "large" : preset.dotSet];
   return classification.bins.flatMap((bin, index) => {
     const cy = y + index * 9.2;
-    return [`<circle cx="${x}" cy="${cy}" r="${(diameters[index] * 0.5).toFixed(3)}" fill="${theme.foreground}"/>`, svgText(x + 8, cy + 1.1, bin.label, MAP_TOKENS.text.legend, theme.text)];
+    return [
+      `<circle cx="${x}" cy="${cy}" r="${(diameters[index] * 0.5).toFixed(3)}" fill="${theme.foreground}"/>`,
+      svgText(x + 8, cy + 1.1, bin.label, MAP_TOKENS.text.legend, theme.text)
+    ];
   });
 }
 
@@ -300,5 +479,9 @@ function stableNoise(...values) {
 }
 
 function escapeXml(value) {
-  return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
