@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Visualization Tool</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="builder" data-theme="white">
+      <aside class="panel">
+        <header class="panel-header">
+          <h1>Map Visualization Tool</h1>
+          <p>Grid-based black/white spatial SVG</p>
+        </header>
+
+        <section class="control-block">
+          <h2>Data</h2>
+          <label>
+            Dataset
+            <select id="datasetSelect"></select>
+          </label>
+          <label class="file-input">
+            Import CSV / JSON / GeoJSON / SVG
+            <input id="fileInput" type="file" accept=".csv,.json,.geojson,.svg,application/json,image/svg+xml,text/csv" />
+          </label>
+          <label>
+            Field
+            <select id="fieldSelect"></select>
+          </label>
+          <dl class="facts">
+            <div><dt>Unit</dt><dd id="unitValue">-</dd></div>
+            <div><dt>Min / Max</dt><dd id="rangeValue">-</dd></div>
+            <div><dt>Spatial</dt><dd id="spatialValue">-</dd></div>
+            <div><dt>Missing</dt><dd id="missingValue">-</dd></div>
+          </dl>
+        </section>
+
+        <section class="control-block">
+          <h2>Classification</h2>
+          <p class="method">Equal Interval / 4 Classes</p>
+          <ol id="classList" class="class-list"></ol>
+        </section>
+
+        <section class="control-block">
+          <h2>Map</h2>
+          <dl class="facts">
+            <div><dt>Grid pitch</dt><dd id="pitchValue">-</dd></div>
+            <div><dt>Dot sizes</dt><dd id="dotValue">-</dd></div>
+            <div><dt>Density</dt><dd id="densityValue">-</dd></div>
+          </dl>
+          <label class="check-row">
+            <input id="labelsToggle" type="checkbox" checked />
+            Geographic labels
+          </label>
+        </section>
+
+        <section class="control-block">
+          <h2>Theme</h2>
+          <div class="segmented">
+            <button id="whiteTheme" class="active" type="button">White</button>
+            <button id="blackTheme" type="button">Black</button>
+          </div>
+        </section>
+
+        <section class="control-block">
+          <h2>Layout</h2>
+          <div class="segmented vertical" id="presetButtons"></div>
+        </section>
+
+        <section class="control-block">
+          <h2>Label</h2>
+          <label>Title <input id="titleInput" type="text" /></label>
+          <label>Year <input id="yearInput" type="text" /></label>
+          <label>Description <textarea id="descriptionInput" rows="3"></textarea></label>
+          <label>Source <input id="sourceInput" type="text" /></label>
+        </section>
+
+        <section class="control-block">
+          <h2>Export</h2>
+          <button id="exportSvg" class="command" type="button">Export SVG</button>
+          <button id="exportPng" class="command" type="button">Export PNG</button>
+          <button id="exportJpeg" class="command" type="button">Export JPEG</button>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div class="toolbar">
+          <div class="segmented" id="viewButtons">
+            <button type="button" data-view="final" class="active">Final</button>
+            <button type="button" data-view="data">Data</button>
+            <button type="button" data-view="classification">Classification</button>
+          </div>
+          <div id="statusLine" class="status">Loading spatial renderer</div>
+        </div>
+        <div class="preview-shell">
+          <div id="preview" class="preview"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
